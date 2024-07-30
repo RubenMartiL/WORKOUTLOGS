@@ -1,0 +1,26 @@
+<section class="px-6 flex flex-col gap-2">
+    <div class="self-end flex gap-2 items-center mb-6">
+        <div class="relative h-full">
+            <input type="text" class="w-full h-full p-2.5 pr-10 rounded-lg bg-white text-secondary text-sm font-primary" placeholder="Search"/>
+            <svg class="absolute h-4 right-3.5 top-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+        </div>
+        <div class="w-fit self-end p-3  bg-primary text-white font-primary rounded-lg text-sm font-semibold fill-white flex gap-2 items-center">
+            <svg class='h-3' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 416c0 17.7 14.3 32 32 32l54.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 448c17.7 0 32-14.3 32-32s-14.3-32-32-32l-246.7 0c-12.3-28.3-40.5-48-73.3-48s-61 19.7-73.3 48L32 384c-17.7 0-32 14.3-32 32zm128 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM320 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32-80c-32.8 0-61 19.7-73.3 48L32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l246.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48l54.7 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-54.7 0c-12.3-28.3-40.5-48-73.3-48zM192 128a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm73.3-64C253 35.7 224.8 16 192 16s-61 19.7-73.3 48L32 64C14.3 64 0 78.3 0 96s14.3 32 32 32l86.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 128c17.7 0 32-14.3 32-32s-14.3-32-32-32L265.3 64z"/></svg>
+            <p>Filters</p>
+        </div>
+    </div>
+
+
+    <div class="grid grid-cols-3 gap-2">
+        @for(exercise of exercises; track $index){
+            <div class="w-full p-2 aspect-square border-2 border-primary rounded-lg font-primary font-semibold flex justify-center items-center uppercase">
+                <p class="w-full h-full flex text-center justify-center items-center overflow-hidden text-ellipsis text-xs">{{exercise.exercise_name}}</p>
+            </div>
+        }
+    </div>
+    <div class="text-white flex justify-end gap-2 fill-primary border border-secondary w-fit items-center rounded-lg self-end">
+        <svg (click)="beforePage()" class='h-9 p-3 px-4 fill-white' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg>
+        <p class="w-14 px-3 font-primary font-semibold uppercase text-center">{{page}}</p>
+        <svg (click)="nextPage()" class='h-9 p-3 px-4 fill-white' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+      </div>
+</section>

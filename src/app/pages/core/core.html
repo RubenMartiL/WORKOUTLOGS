@@ -1,0 +1,23 @@
+<main class="relative w-screen h-screen bg-terciary">
+  <header class="flex justify-between p-6 py-10 items-center">
+    <div class="flex gap-2 items-center">
+      <img class='w-8 h-8 rounded-full' src="https://img.freepik.com/premium-photo/young-beautiful-woman-taking-selfie-front-camera-generative-ai_830962-4327.jpg" alt="">
+      <p class="font-primary font-semibold text-white">Savannah98</p>
+    </div>
+    <div>
+      <svg class='h-6 fill-white' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+    </div>
+  </header>
+  @switch(menu_selected){
+    @case(0){
+      <app-home/>
+    }
+    @case(1){
+      <app-calendar/>
+    }
+    @case(2){
+      <app-exercises/>
+    }
+  }
+  <app-menu (menuClick)="changeMenuSelected($event)"/>
+</main>

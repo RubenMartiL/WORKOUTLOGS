@@ -1,0 +1,11 @@
+<menu class="h-20 bg-secondary absolute bottom-0 w-full pt-2">
+  <ul class="h-full flex gap-16 justify-center items-center">
+    @for(menu of menu_options; track $index){
+      <li (click)="changeMenu(menu.link)" class="flex flex-col gap-2 justify-center items-center h-full font-primary text-sm font-semibold"
+      [ngClass]="{'text-primary fill-primary': menu_selected == menu.link, 'text-white fill-white': menu_selected !== menu.link}">
+        <span [innerHTML]="sanitizeSVG(menu.icon)"></span>
+        <span>{{menu.name}}</span>
+      </li>
+    }
+  </ul>
+</menu>
